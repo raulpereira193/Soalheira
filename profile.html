@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+    <title>Counter Events - My Profile</title>
+
+    <link rel="icon" type="image/x-icon" href="assets/images/cyborg.png">
+
+    <!-- Bootstrap core CSS -->
+    <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+
+    <!-- Additional CSS Files -->
+    <link rel="stylesheet" href="assets/css/fontawesome.css">
+    <link rel="stylesheet" href="assets/css/templatemo-cyborg-gaming.css">
+    <link rel="stylesheet" href="assets/css/owl.css">
+    <link rel="stylesheet" href="assets/css/animate.css">
+    <link rel="stylesheet"href="https://unpkg.com/swiper@7/swiper-bundle.min.css"/>
+
+
+    <script>
+      function openNewWindow() {
+        window.open("login.html", "nomeDaJanela", "height=700,width=700");
+      }
+      </script>
+<!--
+
+TemplateMo 579 Cyborg Gaming
+
+https://templatemo.com/tm-579-cyborg-gaming
+
+-->
+  </head>
+
+<body>
+
+  <!-- ***** Preloader Start ***** -->
+  <div id="js-preloader" class="js-preloader">
+    <div class="preloader-inner">
+      <span class="dot"></span>
+      <div class="dots">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+    </div>
+  </div>
+  <!-- ***** Preloader End ***** -->
+
+  <!-- ***** Header Area Start ***** -->
+  <header class="header-area header-sticky">
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <nav class="main-nav">
+                    <!-- ***** Logo Start ***** -->
+                    <a href="index.html" class="logo">
+                        <img src="assets/images/logo.png" alt="">
+                    </a>
+                    <!-- ***** Logo End ***** -->
+                    <!-- ***** Search End ***** -->
+                    <div class="Login-input">
+                      <form id="Login" action="#">
+                        <div class="col-lg-20">
+                          <div class="main-button">
+                            <a href="#" onclick="openNewWindow()">Login</a>
+                          </div>
+                        </div>
+                      </form>
+                    </div>
+                    <!-- ***** Search End ***** -->
+                    <!-- ***** Menu Start ***** -->
+                    <ul class="nav">
+                      <li><!--Dark mode toggle start-->
+                        <input id='darkModeToogle' type="checkbox" style="display: none;">
+                        <label for="darkModeToogle" for="btn2" class="cont"></label>
+                        <!--Dark mode toggle end-->
+                      </li>
+                      <li><a href="index.html">Home</a></li>
+                      <li><a href="arenas.html">Arenas</a></li>
+                      <li><a href="bootcamp.html">Bootcamp</a></li>
+                      <li><a href="about us.html">About Us</a></li>
+                      <li><a href="profile.html" class="active">Profile <img id="picture" src="assets/images/profile-header.jpg" alt=""></a></li>
+                  </ul>    
+                    <a class='menu-trigger'>
+                        <span>Menu</span>
+                    </a>
+                    <!-- ***** Menu End ***** -->
+                </nav>
+            </div>
+        </div>
+    </div>
+  </header>
+  <!-- ***** Header Area End ***** -->
+
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-12">
+        <div class="page-content">
+
+          <!-- ***** Banner Start ***** -->
+          <div class="row">
+            <div class="col-lg-12">
+              <div class="most-popular">
+                <div class="row">
+                  <div class="col-lg-4">
+                    <img src="assets/images/profile.jpg" alt="" class="text-animation" style="border-radius: 23px;">
+                  </div>
+                  <div class="col-lg-8">
+                    <div class="main-info header-text">
+                      <h3 class="text-animation" data-text="Your Profile Page">Your Profile Page</h3>
+                      <br>
+                      <div id="buttonDiv"></div>
+                      <p id="fullName"></p>
+                      <p id="given_name"></p>
+                      <p id="family_name"></p>
+                      <p id="email"></p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- ***** Banner End ***** -->
+
+          <!-- ***** Gaming Library End ***** -->
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <footer>
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-12">
+          <p>Copyright © 2023 <a href="index.html">Counter Events</a> Company. All rights reserved. 
+        </div>
+      </div>
+    </div>
+  </footer>
+
+
+  <!-- Scripts -->
+  <!-- Bootstrap core JavaScript -->
+  <script src="vendor/jquery/jquery.min.js"></script>
+  <script src="vendor/bootstrap/js/bootstrap.min.js"></script>
+
+  <script src="assets/js/isotope.min.js"></script>
+  <script src="assets/js/owl-carousel.js"></script>
+  <script src="assets/js/tabs.js"></script>
+  <script src="assets/js/popup.js"></script>
+  <script src="assets/js/custom.js"></script>
+  <script src="assets/js/login.js"></script>
+  <script src="https://unpkg.com/jwt-decode/build/jwt-decode.js"></script>
+  <script src="https://accounts.google.com/gsi/client" async defer></script>
+
+  <script> 
+    const fullNameLabel = document.createElement("label");
+    fullNameLabel.textContent = "Nome Completo: ";
+    const fullNameValue = document.createElement("span");
+    fullNameValue.textContent = localStorage.getItem("fullName");
+    document.getElementById("fullName").appendChild(fullNameLabel);
+    document.getElementById("fullName").appendChild(fullNameValue);
+    
+    const givenNameLabel = document.createElement("label");
+    givenNameLabel.textContent = "Nome: ";
+    const givenNameValue = document.createElement("span");
+    givenNameValue.textContent = localStorage.getItem("givenName");
+    document.getElementById("given_name").appendChild(givenNameLabel);
+    document.getElementById("given_name").appendChild(givenNameValue);
+    
+    const familyNameLabel = document.createElement("label");
+    familyNameLabel.textContent = "Sobrenome: ";
+    const familyNameValue = document.createElement("span");
+    familyNameValue.textContent = localStorage.getItem("familyName");
+    document.getElementById("family_name").appendChild(familyNameLabel);
+    document.getElementById("family_name").appendChild(familyNameValue);
+    
+    const emailLabel = document.createElement("label");
+    emailLabel.textContent = "E-mail: ";
+    const emailValue = document.createElement("span");
+    emailValue.textContent = localStorage.getItem("email");
+    document.getElementById("email").appendChild(emailLabel);
+    document.getElementById("email").appendChild(emailValue);</script>
+  
+  <script>
+    var darkModeToggle = document.getElementById('darkModeToggle');
+   var isDarkMode = localStorage.getItem('isDarkMode') === 'true';
+
+   function toggleDarkMode() {
+     var body = document.body;
+     body.classList.toggle('dark-mode');
+     isDarkMode = !isDarkMode;
+     localStorage.setItem('isDarkMode', isDarkMode);
+   }
+   if (isDarkMode) {
+     document.body.classList.add('dark-mode');
+   }
+
+   darkModeToogle.addEventListener('click', toggleDarkMode);
+  </script>
+
+  </body>
+
+</html>
